@@ -1,0 +1,27 @@
+<!-- templates/recipe_details.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>{{ recipe['title'] }} - Recipe Details</title>
+</head>
+<body>
+    <header>
+        <h1>{{ recipe['title'] }}</h1>
+    </header>
+
+    <div class="container">
+        <div class="recipe-card">
+            <img class="recipe-img" src="{{ url_for('static', filename='placeholder_image.jpg') }}" alt="{{ recipe['title'] }}">
+            <br>
+            <p><strong>Ingredients:</strong> {{ recipe['ingredients'] | join(', ') }}</p>
+            <p><strong>Instructions:</strong> {{ recipe['instructions'] }}</p>
+            <a class="view-info-btn" href="{{ url_for('home') }}">Back to Recipes</a>
+        </div>
+    </div>
+</body>
+</html>
